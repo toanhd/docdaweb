@@ -121,6 +121,36 @@ export function convert(
   };
 }
 
+export function convertElement(
+  element: Element,
+  format: OutputFormat,
+  url: string
+): ConversionResult | null {
+  const html = element.innerHTML;
+  if (!html.trim()) return null;
+
+  let content: string;
+  if (format === "markdown") {
+    const turndown = createTurndownService();
+    content = turndown.turndown(element as HTMLElement);
+  } else {
+    content = cleanHtml(html);
+  }
+
+  const heading = element.querySelector("h1, h2, h3");
+  const title = heading?.textContent?.trim() || document.title || "Selected content";
+
+  return {
+    title,
+    byline: null,
+    siteName: null,
+    content,
+    excerpt: "",
+    format,
+    url,
+  };
+}
+
 export function formatOutput(result: ConversionResult): string {
   const header = [
     `# ${result.title}`,

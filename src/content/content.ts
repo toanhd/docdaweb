@@ -1,8 +1,9 @@
 import { convert, formatOutput, type OutputFormat } from "../utils/converter";
+import { initPicker } from "./picker";
 
 interface ConvertMessage {
-  action: "convert";
-  format: OutputFormat;
+  action: string;
+  format?: OutputFormat;
 }
 
 interface ConvertResponse {
@@ -17,7 +18,12 @@ chrome.runtime.onMessage.addListener(
     _sender: chrome.runtime.MessageSender,
     sendResponse: (response: ConvertResponse) => void
   ) => {
-    if (message.action !== "convert") return;
+    if (message.action === "ping") {
+      sendResponse({ success: true });
+      return;
+    }
+
+    if (message.action !== "convert" || !message.format) return;
 
     try {
       const result = convert(document, message.format, window.location.href);
@@ -42,3 +48,5 @@ chrome.runtime.onMessage.addListener(
     return true;
   }
 );
+
+initPicker();
