@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="20" fill="#fafafa" stroke="#d2d2d2" stroke-width="2"/>
+  <text x="64" y="52" text-anchor="middle" font-family="SF Mono, Fira Code, monospace" font-size="32" font-weight="700" fill="#10b981">&lt;/&gt;</text>
+  <line x1="40" y1="68" x2="88" y2="68" stroke="#b4b4b4" stroke-width="2"/>
+  <text x="52" y="102" text-anchor="middle" font-family="SF Mono, Fira Code, monospace" font-size="32" font-weight="700" fill="#1e1e1e">M</text>
+  <g stroke="#1e1e1e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <line x1="74" y1="78" x2="74" y2="104"/>
+    <polyline points="67,97 74,104 81,97"/>
+  </g>
+</svg>
