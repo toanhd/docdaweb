@@ -1,0 +1,39 @@
+{
+  "name": "docdaweb",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser extension that converts web content to LLM-friendly formats",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "tsc --noEmit && vite build",
+    "build:dev": "vite build --mode development",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "browser-extension",
+    "markdown",
+    "llm",
+    "web-content"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/turndown": "^5.0.6",
+    "@types/webextension-polyfill": "^0.12.5",
+    "@typescript-eslint/eslint-plugin": "^8.60.1",
+    "@typescript-eslint/parser": "^8.60.1",
+    "chrome-types": "^0.1.429",
+    "eslint": "^10.4.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vite-plugin-web-extension": "^4.5.1"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "turndown": "^7.2.4",
+    "webextension-polyfill": "^0.12.0"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>DocDaWeb</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>DocDaWeb</h1>
+      <p class="subtitle">Convert to LLM-friendly format</p>
+    </header>
+
+    <div class="format-selector">
+      <button class="format-btn active" data-format="markdown">
+        <span class="format-icon">M↓</span>
+        Markdown
+      </button>
+      <button class="format-btn" data-format="html">
+        <span class="format-icon">&lt;/&gt;</span>
+        Clean HTML
+      </button>
+    </div>
+
+    <div class="actions">
+      <button id="convert-btn" class="primary-btn">
+        Convert & Copy
+      </button>
+    </div>
+
+    <div id="status" class="status hidden"></div>
+
+    <div id="preview-section" class="preview-section hidden">
+      <div class="preview-header">
+        <span>Preview</span>
+        <button id="copy-btn" class="copy-btn">Copy again</button>
+      </div>
+      <pre id="preview" class="preview"></pre>
+    </div>
+  </div>
+
+  <script type="module" src="popup.ts"></script>
+</body>
+</html>
